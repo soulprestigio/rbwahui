@@ -1,0 +1,22 @@
+<div id="<%= dom_id synonym %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Boardid:</strong>
+    <%= synonym.boardid %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Answer:</strong>
+    <%= synonym.answer %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Image:</strong>
+    <%= link_to synonym.image.filename, synonym.image if synonym.image.attached? %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= synonym.status %>
+  </p>
+
+</div>

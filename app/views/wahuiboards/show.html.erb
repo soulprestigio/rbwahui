@@ -1,0 +1,30 @@
+
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+    <div class="mx-auto">
+     <%= @wahuiboard.id %>
+    <div>
+    <div class="mx-auto">
+     <img src=@wahuiboard.image>
+    <div>
+    <div class="mx-auto">
+     <%= @wahuiboard.title %>
+    <div>
+    <div class="mx-auto">
+     <%= @wahuiboard.description %>
+    <div>
+    <div class="mx-auto">
+     <%= @wahuiboard.status %>
+    <div>
+
+    <%= link_to "Edit this wahuiboard", edit_wahuiboard_path(@wahuiboard), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
+    <%= link_to "Back to wahuiboards", wahuiboards_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
+    <div class="inline-block ml-2">
+      <%= button_to "Destroy this wahuiboard", @wahuiboard, method: :delete, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,13 @@
+
+<div id="<%= dom_id wahuiboard %>">
+      <td class="border border-black px-4 py-2"><%= wahuiboard.id %></td>
+      <td class="border border-black px-4 py-2">
+      <% if wahuiboard.image.attached? %>
+       <%= image_tag wahuiboard.image.blob.url, alt: "Wahuiboard Image" %>
+      <% else %>
+      <p>No image available.</p>
+      <% end %></td>
+      <td class="border border-black px-4 py-2"><%= wahuiboard.title %></td>
+      <td class="border border-black px-4 py-2"><%= wahuiboard.description %></td>
+      <td class="border border-black px-4 py-2"><%= wahuiboard.status %></td>
+<div>
