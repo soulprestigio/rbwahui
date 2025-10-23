@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  get "toyyibpay_webhooks/create"
+  get "wallet_deposits/new"
+  get "wallet_deposits/create"
+  get "wallets/show"
+  namespace :admin do
+      resources :boards
+      resources :synonyms
+      resources :users
+      resources :wahuiboards
+
+      root to: "boards#index"
+    end
+  devise_for :users
+
+  resource :wallet, only: [:show]
+  resources :wallet_deposits, only: [:new, :create]
+  post 'toyyibpay/webhook', to: 'toyyibpay_webhooks#create'
+
+  resources :boards
   resources :synonyms
   resources :wahuiboards
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,42 @@
+<%= form_with(model: board, class: "space-y-6") do |form| %>
+  <% if board.errors.any? %>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <strong class="font-bold">prohibited this board from being saved:</strong>
+      <ul class="list-disc ml-5">
+        <% board.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :board_number, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :board_number, class: "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
+  </div>
+
+  <div>
+    <%= form.label :board_name, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :board_name, class: "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
+  </div>
+
+  <div>
+    <%= form.label :board_synonyms, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :board_synonyms, class: "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
+    <p class="mt-2 text-sm text-gray-500">Enter synonyms separated by commas.</p>
+  </div>
+
+  <div>
+    <%= form.label :board_description, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :board_description, class: "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
+  </div>
+
+  <div>
+    <%= form.label :total_bet, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :total_bet, class: "mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
+  </div>
+
+  <div class="flex justify-end">
+    <%= form.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+  </div>
+<% end %>

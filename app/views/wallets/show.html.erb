@@ -1,0 +1,8 @@
+<h1>My Wallet</h1>
+
+<p>
+  <strong>Balance:</strong>
+  <%= number_to_currency(@wallet.balance) %>
+</p>
+
+<%= link_to "Deposit", new_wallet_deposit_path, class: "btn btn-primary" %>

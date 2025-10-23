@@ -43,6 +43,8 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
+  config.x.toyyibpay_base_url = 'https://dev.toyyibpay.com'
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

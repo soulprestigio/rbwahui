@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= content_for(:title) %> - <%= application_title %></title>
+  <%= render "stylesheet" %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag if defined?(csp_meta_tag) %>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <%= render "navigation" %>
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200 p-6">
+        <%= render "flashes" %>
+        <%= yield %>
+      </main>
+    </div>
+  </div>
+
+  <%= render "javascript" %>
+</body>
+</html>
